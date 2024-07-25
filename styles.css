@@ -1,0 +1,228 @@
+/* GLOBAL ELEMENTS */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #082b76;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    max-width: 800px;
+    min-height: 800px;	
+	margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background: #89d8e3;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.block {
+    padding-top: 10px;
+}
+
+/* PRINTING  */
+.heading {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 500px;
+}
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    color:#082b76;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    background-color: white;
+    max-width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.text_area {
+    background: white;
+    margin: 0 auto; 
+    max-width: 500px;
+    padding-bottom: 12px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.passed, .today, .three_days, .weel {
+    margin-bottom: 25px;
+    margin-left: 24px;
+}
+#p_expiration_none {
+    color: rgb(27, 163, 27);
+    text-align: justify;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    padding-right: 50px;
+}
+/* SEARCHING BARS  */
+.search {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 0px 0px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #082b76;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    background-color: white;
+    max-width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.input {
+    margin: 20px 0 10px 0px;
+    display: flex;
+    max-width: 495px;
+    height: 25px;
+    align-items: center;
+}
+.search_name {
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 18px;
+    color: #082b76;
+    margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+.search_bar, .search_bar2 {
+    flex-grow: 2;
+    border: 1px solid black;
+    color: #082b76;
+    padding: 3px;
+    border-radius: 3px 0px 0px 3px;
+}
+.search_bar:focus, .search_bar2:focus {
+    flex-grow: 2;
+    border: 2px solid black;
+    background: rgb(224, 224, 224);
+    color: black;
+    padding: 3px;
+    outline: none;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.search_button, .search_button2 {
+    flex-grow: 1;
+    border: 1.7px solid black;
+    color: black;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 0px 3px 3px 0px;
+    margin-left: 0;
+}
+.search_button:hover, .search_button2:hover  {
+    background-color: rgb(224, 224, 224);
+    color: black;
+    flex-grow: 1;
+    border: 2px solid black;
+    color: black;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 0px 3px 3px 0px;
+    margin-left: 0;
+}
+
+#white_array, #white_array2, #white_array3 {
+    background: white;
+    min-height: 150px;
+    border-radius: 10px;
+    border: 2px solid black;
+    max-width: 500px;
+}
+#butt_clear, #butt_clear2  {
+    border: 2px solid black;
+    border-radius: 4px 4px 4px 4px;
+    margin-top: 3px;
+    font-weight: bold;
+    background-color: white;
+}
+#butt_clear:hover, #butt_clear2:hover {
+    border: 2px solid black;
+    border-radius: 4px 4px 4px 4px;
+    margin-top: 3px;
+    font-weight: bold;
+    background-color: rgb(224, 224, 224);   
+}
+
+/* Current time */
+.time {
+    position: relative;
+    bottom: 15px;
+    right: 22px;
+    margin: 0 auto;
+    max-width: 455px;
+}
+#date_time {
+    position: relative;
+    top: 21.5px;
+    left: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Float - clearfix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+/* REPEAT STYLES */
+
+form .margin-top_clear {
+    margin-top: 0;
+}
+
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .question-mark {
+    float: right;
+    padding-top: 1px;
+    margin-top: -20px;
+    border: 2px solid black;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    right: 25px;
+    bottom: -24px;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
+

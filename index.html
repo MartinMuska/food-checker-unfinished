@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrolor data spotřeby</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = container>
+        <div class="block">
+            <div class="heading">
+                <h1>Kontrolor data spotřeby</h1>
+            </div>
+<!-- Food Checker -->
+            <div class="text_area" id = "text_area">
+                <div class="passed">
+                </div>
+                <div class="today">
+                </div>
+                <div class="three_days">
+                </div>
+                <div class="week">
+                    <p class = "p_expiration_week" ></p>
+                </div>
+                    <p id = "p_expiration_none" ></p>
+            </div>
+<!-- Food Searcher -->
+            <h2 class="heading">Vyhledávání potravin</h2>
+            <form id = "search" class = "search">
+                <div class="input">
+                    <p class = "search_name">Napište název potraviny:</p>
+                    <input id = "search_bar" class = "search_bar" type = "text" placeholder = "Hledat..">
+                    <input id = "search_button" class = "search_button" type= "submit" value = "Poslat"/>
+                </div>
+                <div class = "clearfix"></div>
+                <div id = "white_array"></div>
+                <input id = "butt_clear" type = "submit" value = "Vymazat"/>
+                <div class="tooltip">
+                    <div class="question-mark">?</div>
+                    <span class="tooltip-text">pro vypsání všech potravin z databáze,<br> napište klíčové slovo "all"</span>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+<!-- Recipe Searcher -->
+            <h2 class="heading">Vyhledávání receptů</h2>
+            <form class = "search">
+                <div class="input">
+                    <p class = "search_name">Napište název potravin:</p>
+                    <input id = "search_bar2" class = "search_bar2" type = "text" placeholder = "Hledat..">
+                    <input id = "search_button2" class = "search_button2" type= "submit" value = "Poslat"/>
+                </div>
+                <div class="clearfix"></div>
+                <div id="white_array2"></div> 
+                <input id = "butt_clear2" type = "submit" value = "Vymazat"/>
+            </form>
+<!-- Solitary Food -->
+            <h2 class="heading">Samostatné potraviny</h2>
+            <form class = "search">
+                <div id="white_array3"></div> 
+            </form>
+<!-- Time -->
+            <div class="time">
+                <p id = "date_time"></p>
+                <div class = "clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
