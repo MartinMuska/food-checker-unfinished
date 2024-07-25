@@ -5,30 +5,36 @@ const presentDate = new Date(); const currentDate = presentDate/(1000*60*60*24);
 let tomorow = new Date(presentDate); tomorow.setDate(presentDate.getDate()+1);
 
 // SLOTS DATA OF FOOD
-const slotsData = `
-name, date
-tofu, 07.12.2024
-tofu, 07.10.2024
-rýže, 07.05.2024
-cibule, 07.05.2024
-vejce, 07.30.2024
-mléko, 07.30.2024
-humus, 07.31.2024
-humus, 07.31.2024
-humus, 07.31.2024
-humus, 07.31.2024
-fazole, 07.31.2024
-`
+fetch('data.json')
+.then(response => response.json())
+.then(data => {
+    console.log(data);
 
-const lines = slotsData.trim().split('\n');
-const headers = lines[0].split(',');
-const slotsArray = lines.slice(1).map(line => {
-  const values = line.split(',');
-  return {
-    name: values[0],
-    date: new Date(values[1])
-  }
-});
+
+// const slotsData = `
+// name, date
+// tofu, 07.12.2024
+// tofu, 07.10.2024
+// rýže, 07.05.2024
+// cibule, 07.05.2024
+// vejce, 07.30.2024
+// mléko, 07.30.2024
+// humus, 07.31.2024
+// humus, 07.31.2024
+// humus, 07.31.2024
+// humus, 07.31.2024
+// fazole, 07.31.2024
+// `
+
+// const lines = slotsData.trim().split('\n');
+// const headers = lines[0] .split(',');
+// const slotsArray = lines.slice(1).map(line => {
+//   const values = line.split(',');
+//   return {
+//     name: values[0],
+//     date: new Date(values[1])
+//   }
+// });
 
 // CLEAR TEXT
 function clearText(searchButton, searchBar) {
@@ -49,7 +55,7 @@ let searchButton = document.getElementById("search_button"); searchButton.addEve
     let output = document.createElement("p");
     let found = false; // Reset found for each search attempt
     
-    slotsArray.forEach(function (slotSearch) {
+    data.forEach(function (slotSearch) {
         let searchByWord = slotSearch.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         if (input === "all") {
             let output = document.createElement("p");
@@ -159,7 +165,7 @@ let expirationDateChecker = function(slot) {
         } 
     }
 
-slotsArray.forEach(slot => {
+data.forEach(slot => {
     if (expirationDateChecker(slot)) {
     }
 });
@@ -227,7 +233,7 @@ const solitaryFoods = {
 
 let solitaryFoodsListName = [];
 let solitaryFoodsListDate = [];
-for (let slot of slotsArray) {
+for (let slot of data) {
     for (let category in solitaryFoods) {
         if (solitaryFoods[category].some(food => slot.name.includes(food))) {
             solitaryFoodsListName.push(slot.name);
@@ -295,6 +301,8 @@ if(minute < 10) {
 let dateTime = document.getElementById("date_time");
     dateTime.textContent = `Dnes je ${days}/${month}/${year}, ${daysOfTheWeek[day]}, ${hour}:${m}${minute}`
 
+})
+.catch(error => console.error('Error loading JSON data:', error));
 
 // adding recipe clicks
 // sort food checker
