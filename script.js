@@ -133,7 +133,7 @@
                 codeToImport.style.color = "#EF8C1C";
                 codeToImport.style.fontSize = "17px";
                 codeToImport.style.fontWeight = "bold";
-                codeToImport.style.lineHeight = "20px";
+                codeToImport.style.lineHeight = "10px";
                 document.querySelector(".three_days").appendChild(codeToImport);
                 foodSearched = true
             } else if(result > 3 && result < 8) {
