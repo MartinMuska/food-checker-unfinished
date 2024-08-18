@@ -117,7 +117,7 @@
                 codeToImport.style.color = "rgb(106, 106, 70)";
                 codeToImport.style.fontSize = "17px";
                 codeToImport.style.fontWeight = "bold";
-                codeToImport.style.lineHeight = "10px";
+                codeToImport.style.lineHeight = "15px";
                 document.querySelector(".passed").appendChild(codeToImport);
                 foodSearched = true
             } else if(result === 0) {
@@ -125,7 +125,7 @@
                 codeToImport.style.color = "red";
                 codeToImport.style.fontSize = "17px";
                 codeToImport.style.fontWeight = "bold";
-                codeToImport.style.lineHeight = "10px";
+                codeToImport.style.lineHeight = "15px";
                 document.querySelector(".today").appendChild(codeToImport);
                 foodSearched = true  
             } else if(result > 0 && result < 4) {
@@ -133,14 +133,14 @@
                 codeToImport.style.color = "#EF8C1C";
                 codeToImport.style.fontSize = "17px";
                 codeToImport.style.fontWeight = "bold";
-                codeToImport.style.lineHeight = "10px";
+                codeToImport.style.lineHeight = "15px";
                 document.querySelector(".three_days").appendChild(codeToImport);
                 foodSearched = true
             } else if(result > 3 && result < 8) {
                 codeToImport.textContent = `${slot.name}: datum spotřeby do týdne končí.`;
                 codeToImport.style.fontSize = "17px";
                 codeToImport.style.fontWeight = "bold";
-                codeToImport.style.lineHeight = "10px";
+                codeToImport.style.lineHeight = "15px";
                 codeToImport.style.marginLeft = "24px";
                 document.querySelector(".week").appendChild(codeToImport);
                 foodSearched = true;
