@@ -1,8 +1,14 @@
-    // Global variables
-    const presentDate = new Date(); const currentDate = presentDate/(1000*60*60*24);
-
-    // birthday and Name Holiday
-    let tomorow = new Date(presentDate); tomorow.setDate(presentDate.getDate()+1);
+    function createCurrentDate() {
+        const presentDate = new Date(); 
+        const currentDate = presentDate/(1000*60*60*24);
+        return {
+            getCurrentDate: function() {
+                return currentDate; 
+            }
+        }
+    }
+    dateClosure = createCurrentDate()
+    console.log(dateClosure.getCurrentDate())
 
     // SLOTS DATA OF FOOD
     fetch('data.json')
@@ -51,7 +57,7 @@
             }
             if (searchByWord.includes(input) && input.length > 2) {
                 let output = document.createElement("p");
-                if (slotSearch.date / (1000 * 60 * 60 * 24) >= currentDate) {
+                if (slotSearch.date / (1000 * 60 * 60 * 24) >= dateClosure.getCurrentDate()) {
                     output.textContent = `${slotSearch.name}: spotřebujte do ${slotSearch.date.toLocaleDateString("en-GB")}`;
                     output.style.color = "black";
                     output.style.marginLeft = "3px";
@@ -60,7 +66,7 @@
                     document.querySelector("#white_array").appendChild(output);
                     found = true;
                 }
-                else if (slotSearch.date / (1000 * 60 * 60 * 24) < currentDate) {
+                else if (slotSearch.date / (1000 * 60 * 60 * 24) < dateClosure.getCurrentDate()) {
                     output.textContent = `${slotSearch.name}: potravina je prošlá.`;
                     output.style.color = "black";
                     output.style.marginLeft = "3px";
@@ -104,7 +110,7 @@
     let foodSearched = false;
 
     let expirationDateChecker = function(slot) {
-        let result = Math.ceil(slot.date / (1000 * 60 * 60 * 24) - currentDate);
+        let result = Math.ceil(slot.date / (1000 * 60 * 60 * 24) - dateClosure.getCurrentDate());
         let codeToImport = document.createElement("p");
             if (result < 0 && !isNaN(result)) {
                 codeToImport.textContent  = `${slot.name}: potravina je prošlá!`;
