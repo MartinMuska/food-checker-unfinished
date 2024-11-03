@@ -10,7 +10,7 @@
     dateClosure = createCurrentDate()
     console.log(dateClosure.getCurrentDate())
 
-    // SLOTS DATA OF FOOD
+    //SLOTS DATA OF FOOD
     fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -22,6 +22,7 @@
             date: new Date(slot.date)
         }
     })
+
 
 
     // CLEAR TEXT
